@@ -1,0 +1,160 @@
+ID Patient ID_Speciality Speciality Priority
+1 “Patient-001” 6 "Urgency" 1
+2 “Patient-002” 6 "Urgency" 1
+3 “Patient-003” 6 "Urgency" 1
+4 “Patient-004” 6 "Urgency" 1
+5 “Patient-005” 6 "Urgency" 1
+6 “Patient-006” 6 "Urgency" 1
+7 “Patient-007” 6 "Urgency" 1
+8 “Patient-008” 6 "Urgency" 1
+9 “Patient-009” 6 "Urgency" 1
+10 “Patient-010” 6 "Urgency" 1
+11 “Patient-011” 6 "Urgency" 1
+12 “Patient-012” 6 "Urgency" 1
+13 “Patient-013” 6 "Urgency" 1
+14 “Patient-014” 6 "Urgency" 1
+15 “Patient-015” 6 "Urgency" 1
+16 “Patient-016” 6 "Urgency" 1
+17 “Patient-017” 6 "Urgency" 1
+18 “Patient-018” 6 "Urgency" 1
+19 “Patient-019” 6 "Urgency" 1
+20 “Patient-020” 6 "Urgency" 1
+21 “Patient-021” 6 "Urgency" 1
+22 “Patient-022” 6 "Urgency" 1
+23 “Patient-023” 6 "Urgency" 1
+24 “Patient-024” 6 "Urgency" 1
+25 “Patient-025” 6 "Urgency" 1
+26 “Patient-026” 6 "Urgency" 1
+27 “Patient-027” 6 "Urgency" 1
+28 “Patient-028” 1 "General Surgery" 3
+29 “Patient-029” 3 "Ophthalmology" 2
+30 “Patient-030” 4 "Vascular" 3
+31 “Patient-031” 5 "Orthopedy" 2
+32 “Patient-032” 6 "Urgency" 3
+33 “Patient-033” 7 "Urology" 3
+34 “Patient-034” 8 "Plastic" 3
+35 “Patient-035” 9 "Neurology" 2
+36 “Patient-036” 2 "Ginecology" 2
+37 “Patient-037” 1 "General Surgery" 2
+38 “Patient-038” 3 "Ophthalmology" 3
+39 “Patient-039” 4 "Vascular" 2
+40 “Patient-040” 5 "Orthopedy" 2
+41 “Patient-041” 6 "Urgency" 3
+42 “Patient-042” 7 "Urology" 3
+43 “Patient-043” 8 "Plastic" 2
+44 “Patient-044” 9 "Neurology" 2
+45 “Patient-045” 2 "Ginecology" 3
+46 “Patient-046” 1 "General Surgery" 3
+47 “Patient-047” 3 "Ophthalmology" 2
+48 “Patient-048” 4 "Vascular" 3
+49 “Patient-049” 5 "Orthopedy" 2
+50 “Patient-050” 6 "Urgency" 3
+51 “Patient-051” 7 "Urology" 3
+52 “Patient-052” 8 "Plastic" 3
+53 “Patient-053” 9 "Neurology" 2
+54 “Patient-054” 2 "Ginecology" 3
+55 “Patient-055” 1 "General Surgery" 3
+56 “Patient-056” 3 "Ophthalmology" 3
+57 “Patient-057” 4 "Vascular" 3
+58 “Patient-058” 5 "Orthopedy" 3
+59 “Patient-059” 6 "Urgency" 2
+60 “Patient-060” 7 "Urology" 2
+61 “Patient-061” 8 "Plastic" 2
+62 “Patient-062” 9 "Neurology" 2
+63 “Patient-063” 2 "Ginecology" 3
+64 “Patient-064” 1 "General Surgery" 3
+65 “Patient-065” 3 "Ophthalmology" 3
+66 “Patient-066” 4 "Vascular" 1
+67 “Patient-067” 5 "Orthopedy" 2
+68 “Patient-068” 6 "Urgency" 3
+69 “Patient-069” 7 "Urology" 1
+70 “Patient-070” 8 "Plastic" 1
+71 “Patient-071” 9 "Neurology" 2
+72 “Patient-072” 2 "Ginecology" 2
+73 “Patient-073” 1 "General Surgery" 3
+74 “Patient-074” 3 "Ophthalmology" 3
+75 “Patient-075” 4 "Vascular" 3
+76 “Patient-076” 5 "Orthopedy" 2
+77 “Patient-077” 6 "Urgency" 3
+78 “Patient-078” 7 "Urology" 2
+79 “Patient-079” 8 "Plastic" 3
+80 “Patient-080” 9 "Neurology" 2
+81 “Patient-081” 2 "Ginecology" 2
+82 “Patient-082” 1 "General Surgery" 3
+83 “Patient-083” 3 "Ophthalmology" 3
+84 “Patient-084” 4 "Vascular" 2
+85 “Patient-085” 5 "Orthopedy" 3
+86 “Patient-086” 6 "Urgency" 3
+87 “Patient-087” 7 "Urology" 3
+88 “Patient-088” 8 "Plastic" 2
+89 “Patient-089” 9 "Neurology" 3
+90 “Patient-090” 2 "Ginecology" 3
+91 “Patient-091” 1 "General Surgery" 1
+92 “Patient-092” 3 "Ophthalmology" 3
+93 “Patient-093” 4 "Vascular" 2
+94 “Patient-094” 5 "Orthopedy" 3
+95 “Patient-095” 6 "Urgency" 2
+96 “Patient-096” 7 "Urology" 3
+97 “Patient-097” 8 "Plastic" 3
+98 “Patient-098” 9 "Neurology" 3
+99 “Patient-099” 2 "Ginecology" 2
+100 “Patient-100” 1 "General Surgery" 2
+101 “Patient-101” 3 "Ophthalmology" 3
+102 “Patient-102” 4 "Vascular" 2
+103 “Patient-103” 5 "Orthopedy" 3
+104 “Patient-104” 6 "Urgency" 2
+105 “Patient-105” 7 "Urology" 2
+106 “Patient-106” 8 "Plastic" 2
+107 “Patient-107” 9 "Neurology" 2
+108 “Patient-108” 2 "Ginecology" 3
+109 “Patient-109” 1 "General Surgery" 2
+110 “Patient-110” 3 "Ophthalmology" 3
+111 “Patient-111” 4 "Vascular" 3
+112 “Patient-112” 5 "Orthopedy" 1
+113 “Patient-113” 6 "Urgency" 2
+114 “Patient-114” 7 "Urology" 3
+115 “Patient-115” 8 "Plastic" 2
+116 “Patient-116” 9 "Neurology" 2
+117 “Patient-117” 2 "Ginecology" 3
+118 “Patient-118” 1 "General Surgery" 2
+119 “Patient-119” 3 "Ophthalmology" 2
+120 “Patient-120” 4 "Vascular" 2
+121 “Patient-121” 5 "Orthopedy" 2
+122 “Patient-122” 6 "Urgency" 3
+123 “Patient-123” 7 "Urology" 2
+124 “Patient-124” 8 "Plastic" 3
+125 “Patient-125” 9 "Neurology" 1
+126 “Patient-126” 2 "Ginecology" 2
+127 “Patient-127” 1 "General Surgery" 3
+128 “Patient-128” 3 "Ophthalmology" 3
+129 “Patient-129” 4 "Vascular" 3
+130 “Patient-130” 5 "Orthopedy" 3
+131 “Patient-131” 6 "Urgency" 2
+132 “Patient-132” 7 "Urology" 1
+133 “Patient-133” 8 "Plastic" 3
+134 “Patient-134” 9 "Neurology" 3
+135 “Patient-135” 2 "Ginecology" 2
+136 “Patient-136” 1 "General Surgery" 2
+137 “Patient-137” 3 "Ophthalmology" 3
+138 “Patient-138” 4 "Vascular" 3
+139 “Patient-139” 5 "Orthopedy" 3
+140 “Patient-140” 6 "Urgency" 2
+141 “Patient-141” 7 "Urology" 2
+142 “Patient-142” 8 "Plastic" 2
+143 “Patient-143” 9 "Neurology" 3
+144 “Patient-144” 2 "Ginecology" 2
+145 “Patient-145” 1 "General Surgery" 2
+146 “Patient-146” 3 "Ophthalmology" 2
+147 “Patient-147” 4 "Vascular" 3
+148 “Patient-148” 5 "Orthopedy" 3
+149 “Patient-149” 6 "Urgency" 3
+150 “Patient-150” 7 "Urology" 3
+151 “Patient-151” 8 "Plastic" 2
+152 “Patient-152” 9 "Neurology" 2
+153 “Patient-153” 2 "Ginecology" 1
+154 “Patient-154” 1 "General Surgery" 3
+155 “Patient-155” 3 "Ophthalmology" 3
+156 “Patient-156” 4 "Vascular" 3
+157 “Patient-157” 5 "Orthopedy" 3
+158 “Patient-158” 6 "Urgency" 3
+159 “Patient-159” 7 "Urology" 3

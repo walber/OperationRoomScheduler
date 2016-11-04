@@ -1,0 +1,29 @@
+ID Surgeon ID_Speciality Speciality Tmaxd Tmaxs
+1 “Doctor-01” 6 "Urgency" 6 18
+2 “Doctor-02” 6 "Urgency" 6 18
+3 “Doctor-03” 6 "Urgency" 6 18
+4 “Doctor-04” 2 "Ginecology" 4 12
+5 “Doctor-05” 2 "Ginecology" 4 12
+6 “Doctor-06” 2 "Ginecology" 4 18
+7 “Doctor-07” 3 "Ophthalmology" 6 18
+8 “Doctor-08” 3 "Ophthalmology" 6 18
+9 “Doctor-09” 3 "Ophthalmology" 6 18
+10 “Doctor-10” 3 "Ophthalmology" 6 18
+11 “Doctor-11” 4 "Vascular" 8 16
+12 “Doctor-12” 4 "Vascular" 8 16
+13 “Doctor-13” 1 "General Surgery" 4 16
+14 “Doctor-14” 1 "General Surgery" 4 16
+15 “Doctor-15” 1 "General Surgery" 4 16
+16 “Doctor-16” 1 "General Surgery" 4 16
+17 “Doctor-17” 5 "Orthopedy" 4 16
+18 “Doctor-18” 5 "Orthopedy" 4 16
+19 “Doctor-19” 7 "Urology" 3 12
+20 “Doctor-20” 7 "Urology" 3 12
+21 “Doctor-21” 7 "Urology" 3 12
+22 “Doctor-22” 7 "Urology" 3 12
+23 “Doctor-23” 8 "Plastic" 4 16
+24 “Doctor-24” 8 "Plastic" 4 16
+25 “Doctor-25” 8 "Plastic" 4 16
+26 “Doctor-26” 9 "Neurology" 6 12
+27 “Doctor-27” 9 "Neurology" 6 12
+28 “Doctor-28” 9 "Neurology" 6 12

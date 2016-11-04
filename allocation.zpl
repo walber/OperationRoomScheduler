@@ -1,21 +1,21 @@
 #
 # Speciality tuple: <id_speciality,speciality_name,periodUnits_need,suspencion_rate>
 #
-set RAWSpecialities := { <1,"Cirurgia Geral",4,0.396>,<2,"Ginecologia",2,0.377>,<3,"Oftalmologia",2,0.513>,<4,"Vascular",2,0.77>,<5,"Ortopedia",2,0.459>,<6,"Urgencia",2,0.05>,<7,"Urologia",2,0.444>,<8,"Plastica",2,0.337>,<9,"Neurologia",2,0.233> };
+set RAWSpecialities := { read "specialities.csv" as "<1n,2s,3n,4n>" skip 1 };
 
 #
 # Doctor tuple: <id_doctor,id_speciality,t_max_day,t_max_week>
 #
-set RAWDoctors := {<1,1,8,30>, <2,1,6,25>, <3,6,6,25>, <4,7,6,25>, <5,3,6,25>, <6,5,6,25>};
+set RAWDoctors := { read "doctors.csv" as "<1n,3n,5n,6n>" skip 1 };
 
 #
 # Surgery tuple: <id_surgery,id_speciality,priority>
 #
-set RAWSurgeries := {<1,1,1>, <2,6,1>, <3,3,3>, <4,5,3>, <5,7,1>, <6,1,1>, <7,6,1>, <8,3,3>, <9,5,3>, <10,7,1>};
+set RAWSurgeries := { read "surgeries.csv" as "<1n,3n,5n>" skip 1 };
 
 set Rooms := {1..8};
 set Days := {1..5};
-param MAX_TIME_UNIT := 8;
+param MAX_TIME_UNIT := 24;
 set PeriodUnits := { 1 .. MAX_TIME_UNIT };
 
 set PeriodIndexes := { <speciality,size,periodUnit> in proj(RAWSpecialities, <1,3>)*PeriodUnits with (periodUnit + size) <= MAX_TIME_UNIT };

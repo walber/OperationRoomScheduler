@@ -15,11 +15,17 @@ set RAWSurgeries := { read "surgeries.csv" as "<1n,3n,5n>" skip 1 };
 
 set Rooms := {1..8};
 set Days := {1..5};
-param MAX_TIME_UNIT := 24;
+param MAX_TIME_UNIT := 16;
 set PeriodUnits := { 1 .. MAX_TIME_UNIT };
 
 set PeriodIndexes := { <speciality,size,periodUnit> in proj(RAWSpecialities, <1,3>)*PeriodUnits with (periodUnit + size) <= MAX_TIME_UNIT };
 set SizedPeriods[<size,timeUnit> in proj(PeriodIndexes, <2,3>)] := { timeUnit to (timeUnit + (size - 1)) by 1 };
+
+param ShadowedPeriods[ <size_1,periodUnit_1,size_2,periodUnit_2> in proj(PeriodIndexes, <2,3>)*proj(PeriodIndexes, <2,3>) ] := 
+	if ( card(SizedPeriods[size_1,periodUnit_1] inter SizedPeriods[size_2,periodUnit_2]) > 0)
+		then 1
+	else 0
+	end;
 
 set CriticalSurgeries := proj({ <id_surgery,id_speciality,prior> in RAWSurgeries with prior == 1 }, <1>);
 set MajorSurgeries := proj({ <id_surgery,id_speciality,prior> in RAWSurgeries with prior == 2 }, <1>);
@@ -42,6 +48,11 @@ param DoctorsAvaiability[Doctors*PeriodUnits*Days] := |1, 2, 3, 4, 5|
 set Allocations := proj( {<surgery,s1,doctor,s2,room,day,s3,size,periodUnit> in proj(RAWSurgeries, <1,2>)*proj(RAWDoctors, <1,2>)*Rooms*Days*PeriodIndexes
 	with s1 == s2 and s1 == s3 and DoctorsAvaiability[doctor,periodUnit,day] == 1}, <1,2,3,5,6,8,9> );
 
+do print "Specialities: ", card(RAWSpecialities);
+do print "Surgeries: ", card(RAWSurgeries);
+do print "Doctors: ", card(RAWDoctors);
+do print "Variables: ", card(Allocations);
+
 var x[Allocations] binary;
 
 maximize allocations: sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations : x[surgery,speciality,doctor,room,day,size,periodUnit];
@@ -49,6 +60,7 @@ maximize allocations: sum <surgery,speciality,doctor,room,day,size,periodUnit> i
 #
 # Every surgery with priority 1 have to be done by a doctor in a given room, day and a time block.
 #
+do print "const_1";
 subto const_1: forall <critical_surgery> in CriticalSurgeries do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with critical_surgery == surgery : x[surgery,speciality,doctor,room,day,size,periodUnit] == 1;
@@ -56,6 +68,7 @@ subto const_1: forall <critical_surgery> in CriticalSurgeries do
 #
 # The others regular surgeries should be done by a doctor in a given room, day and a time block.
 #
+do print "const_2";
 subto const_2: forall <major_surgery> in MajorSurgeries do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with major_surgery == surgery : x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
@@ -63,6 +76,7 @@ subto const_2: forall <major_surgery> in MajorSurgeries do
 #
 # Minor surgeries with suspencion rate below 50% can be allocated.
 #
+do print "const_3";
 subto const_3: forall <minor_surgery,suspencion_rate> in MinorSurgeries do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with minor_surgery == surgery and suspencion_rate < 0.5 : x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
@@ -70,6 +84,7 @@ subto const_3: forall <minor_surgery,suspencion_rate> in MinorSurgeries do
 #
 # Minor surgeries with suspencion rate above 50% cannot be allocated.
 #
+do print "const_4";
 subto const_4: forall <minor_surgery,suspencion_rate> in MinorSurgeries do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with minor_surgery == surgery and suspencion_rate >= 0.5 : x[surgery,speciality,doctor,room,day,size,periodUnit] == 0;
@@ -77,25 +92,28 @@ subto const_4: forall <minor_surgery,suspencion_rate> in MinorSurgeries do
 #
 # A room in a given a day and time period can be only allocated once.
 #
+do print "const_5";
 subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in Rooms*Days*proj(PeriodIndexes, <2,3>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_room == room and obs_day == day and
-		card(SizedPeriods[obs_size,obs_periodUnit] inter SizedPeriods[size,periodUnit]) > 0 :
+		ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 #
 # A doctor in a given day and time period can be only allocated once.
 #
-subto const_7: forall <obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,4,5,6,7>) do
+do print "const_6";
+subto const_6: forall <obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,4,5,6,7>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_doctor == obs_doctor and obs_room == room and obs_day == day and 
-		card(SizedPeriods[obs_size,obs_periodUnit] inter SizedPeriods[size,periodUnit]) > 0 : 
+		ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 : 
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 #
 # Doctor's max daily time
 #
-subto const_8: forall <observed_day,observed_doctor,t_max_day> in Days*proj(RAWDoctors, <1,3>) do
+do print "const_7";
+subto const_7: forall <observed_day,observed_doctor,t_max_day> in Days*proj(RAWDoctors, <1,3>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with observed_doctor == doctor and observed_day == day: 
 			x[surgery,speciality,doctor,room,day,size,periodUnit]*card(SizedPeriods[size,periodUnit]) <= t_max_day;
@@ -103,7 +121,8 @@ subto const_8: forall <observed_day,observed_doctor,t_max_day> in Days*proj(RAWD
 #
 # Doctor's max weekly time
 #
-subto const_9: forall <observed_doctor,t_max_week> in proj(RAWDoctors, <1,4>) do
+do print "const_8";
+subto const_8: forall <observed_doctor,t_max_week> in proj(RAWDoctors, <1,4>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with observed_doctor == doctor : 
 			x[surgery,speciality,doctor,room,day,size,periodUnit]*card(SizedPeriods[size,periodUnit]) <= t_max_week;

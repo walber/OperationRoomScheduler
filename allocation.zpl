@@ -151,9 +151,9 @@ do print "A doctor in a given day and time period can be only allocated once.";
 do print "";
 
 set DoctorsDayTimeIndexes := Doctors*Days*TimeIndexes;
-set ShadowedVarsDD[<obs_doctor,obs_day,obs_size,obs_period> in DoctorsDayTimeIndexes] := {
+set ShadowedVarsDD[<obs_doctor,obs_day,obs_size,obs_periodUnit> in DoctorsDayTimeIndexes] := {
 	<surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
-	with obs_doctor == doctor and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,obs_size,obs_periodUnit] == 1 };
+	with obs_doctor == doctor and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 };
 
 subto const_7: forall <obs_doctor,obs_day,obs_size,obs_period> in DoctorsDayTimeIndexes do 
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in ShadowedVarsDD[obs_doctor,obs_day,obs_size,obs_period] :

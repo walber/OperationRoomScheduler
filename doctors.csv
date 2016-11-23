@@ -1,29 +1,29 @@
 ID Surgeon ID_Speciality Speciality Tmaxd Tmaxw
-1 “Doctor-01” 6 Urgency 6 24
-2 “Doctor-02” 6 Urgency 6 18
-3 “Doctor-03” 6 Urgency 6 24
-4 “Doctor-04” 2 Ginecology 4 20
-5 “Doctor-05” 2 Ginecology 4 20
-6 “Doctor-06” 2 Ginecology 4 20
-7 “Doctor-07” 3 Ophthalmology 6 24
-8 “Doctor-08” 3 Ophthalmology 6 18
-9 “Doctor-09” 3 Ophthalmology 6 24
-10 “Doctor-10” 3 Ophthalmology 6 24
-11 “Doctor-11” 4 Vascular 8 24
-12 “Doctor-12” 4 Vascular 8 16
-13 “Doctor-13” 1 “General Surgery” 4 20
-14 “Doctor-14” 1 “General Surgery” 4 24
-15 “Doctor-15” 1 “General Surgery” 4 24
-16 “Doctor-16” 1 “General Surgery” 4 20
-17 “Doctor-17” 5 Orthopedy 4 20
-18 “Doctor-18” 5 Orthopedy 4 20
-19 “Doctor-19” 7 Urology 6 18
-20 “Doctor-20” 7 Urology 6 24
-21 “Doctor-21” 7 Urology 6 18
-22 “Doctor-22” 7 Urology 6 24
-23 “Doctor-23” 8 Plastic 4 20
-24 “Doctor-24” 8 Plastic 4 20
-25 “Doctor-25” 8 Plastic 4 16
-26 “Doctor-26” 9 Neurology 6 24
-27 “Doctor-27” 9 Neurology 6 24
-28 “Doctor-28” 9 Neurology 6 18
+1 "Doctor-01" 6 Urgency 6 24
+2 "Doctor-02" 6 Urgency 6 18
+3 "Doctor-03" 6 Urgency 6 24
+4 "Doctor-04" 2 Ginecology 4 20
+5 "Doctor-05" 2 Ginecology 4 20
+6 "Doctor-06" 2 Ginecology 4 20
+7 "Doctor-07" 3 Ophthalmology 6 24
+8 "Doctor-08" 3 Ophthalmology 6 18
+9 "Doctor-09" 3 Ophthalmology 6 24
+10 "Doctor-10" 3 Ophthalmology 6 24
+11 "Doctor-11" 4 Vascular 8 24
+12 "Doctor-12" 4 Vascular 8 16
+13 "Doctor-13" 1 "General Surgery" 4 20
+14 "Doctor-14" 1 "General Surgery" 4 24
+15 "Doctor-15" 1 "General Surgery" 4 24
+16 "Doctor-16" 1 "General Surgery" 4 20
+17 "Doctor-17" 5 Orthopedy 4 20
+18 "Doctor-18" 5 Orthopedy 4 20
+19 "Doctor-19" 7 Urology 6 18
+20 "Doctor-20" 7 Urology 6 24
+21 "Doctor-21" 7 Urology 6 18
+22 "Doctor-22" 7 Urology 6 24
+23 "Doctor-23" 8 Plastic 4 20
+24 "Doctor-24" 8 Plastic 4 20
+25 "Doctor-25" 8 Plastic 4 16
+26 "Doctor-26" 9 Neurology 6 24
+27 "Doctor-27" 9 Neurology 6 24
+28 "Doctor-28" 9 Neurology 6 18

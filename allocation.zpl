@@ -140,7 +140,7 @@ do print "A room can be only scheduled MAX_TIME_UNIT per day.";
 do print "";
 
 
-subto const_6: forall <obs_room,obs_day> in RoomsDays do
+subto const_6: forall <obs_room,obs_day> in Rooms*Days do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_room == room and obs_day == day :
 			x[surgery,speciality,doctor,room,day,size,periodUnit]*size <= MAX_TIME_UNIT;

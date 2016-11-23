@@ -11,10 +11,10 @@ ID Surgeon ID_Speciality Speciality Tmaxd Tmaxw
 10 “Doctor-10” 3 Ophthalmology 6 24
 11 “Doctor-11” 4 Vascular 8 24
 12 “Doctor-12” 4 Vascular 8 16
-13 “Doctor-13” 1 "General Surgery" 4 20
-14 “Doctor-14” 1 "General Surgery" 4 24
-15 “Doctor-15” 1 "General Surgery" 4 24
-16 “Doctor-16” 1 "General Surgery" 4 20
+13 “Doctor-13” 1 “General Surgery” 4 20
+14 “Doctor-14” 1 “General Surgery” 4 24
+15 “Doctor-15” 1 “General Surgery” 4 24
+16 “Doctor-16” 1 “General Surgery” 4 20
 17 “Doctor-17” 5 Orthopedy 4 20
 18 “Doctor-18” 5 Orthopedy 4 20
 19 “Doctor-19” 7 Urology 6 18

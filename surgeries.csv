@@ -26,7 +26,7 @@ ID Patient ID_Speciality Speciality Priority
 25 “Patient-025” 6 Urgency 1
 26 “Patient-026” 6 Urgency 1
 27 “Patient-027” 6 Urgency 1
-28 “Patient-028” 1 "General Surgery" 3
+28 “Patient-028” 1 “General Surgery” 3
 29 “Patient-029” 3 Ophthalmology 2
 30 “Patient-030” 4 Vascular 3
 31 “Patient-031” 5 Orthopedy 2
@@ -35,7 +35,7 @@ ID Patient ID_Speciality Speciality Priority
 34 “Patient-034” 8 Plastic 3
 35 “Patient-035” 9 Neurology 2
 36 “Patient-036” 2 Ginecology 2
-37 “Patient-037” 1 "General Surgery" 2
+37 “Patient-037” 1 “General Surgery” 2
 38 “Patient-038” 3 Ophthalmology 3
 39 “Patient-039” 4 Vascular 2
 40 “Patient-040” 5 Orthopedy 2
@@ -44,7 +44,7 @@ ID Patient ID_Speciality Speciality Priority
 43 “Patient-043” 8 Plastic 2
 44 “Patient-044” 9 Neurology 2
 45 “Patient-045” 2 Ginecology 3
-46 “Patient-046” 1 "General Surgery" 3
+46 “Patient-046” 1 “General Surgery” 3
 47 “Patient-047” 3 Ophthalmology 2
 48 “Patient-048” 4 Vascular 3
 49 “Patient-049” 5 Orthopedy 2
@@ -53,7 +53,7 @@ ID Patient ID_Speciality Speciality Priority
 52 “Patient-052” 8 Plastic 3
 53 “Patient-053” 9 Neurology 2
 54 “Patient-054” 2 Ginecology 3
-55 “Patient-055” 1 "General Surgery" 3
+55 “Patient-055” 1 “General Surgery” 3
 56 “Patient-056” 3 Ophthalmology 3
 57 “Patient-057” 4 Vascular 3
 58 “Patient-058” 5 Orthopedy 3
@@ -62,7 +62,7 @@ ID Patient ID_Speciality Speciality Priority
 61 “Patient-061” 8 Plastic 2
 62 “Patient-062” 9 Neurology 2
 63 “Patient-063” 2 Ginecology 3
-64 “Patient-064” 1 "General Surgery" 3
+64 “Patient-064” 1 “General Surgery” 3
 65 “Patient-065” 3 Ophthalmology 3
 66 “Patient-066” 4 Vascular 1
 67 “Patient-067” 5 Orthopedy 2
@@ -71,7 +71,7 @@ ID Patient ID_Speciality Speciality Priority
 70 “Patient-070” 8 Plastic 1
 71 “Patient-071” 9 Neurology 2
 72 “Patient-072” 2 Ginecology 2
-73 “Patient-073” 1 "General Surgery" 3
+73 “Patient-073” 1 “General Surgery” 3
 74 “Patient-074” 3 Ophthalmology 3
 75 “Patient-075” 4 Vascular 3
 76 “Patient-076” 5 Orthopedy 2
@@ -80,7 +80,7 @@ ID Patient ID_Speciality Speciality Priority
 79 “Patient-079” 8 Plastic 3
 80 “Patient-080” 9 Neurology 2
 81 “Patient-081” 2 Ginecology 2
-82 “Patient-082” 1 "General Surgery" 3
+82 “Patient-082” 1 “General Surgery” 3
 83 “Patient-083” 3 Ophthalmology 3
 84 “Patient-084” 4 Vascular 2
 85 “Patient-085” 5 Orthopedy 3
@@ -89,7 +89,7 @@ ID Patient ID_Speciality Speciality Priority
 88 “Patient-088” 8 Plastic 2
 89 “Patient-089” 9 Neurology 3
 90 “Patient-090” 2 Ginecology 3
-91 “Patient-091” 1 "General Surgery" 1
+91 “Patient-091” 1 “General Surgery” 1
 92 “Patient-092” 3 Ophthalmology 3
 93 “Patient-093” 4 Vascular 2
 94 “Patient-094” 5 Orthopedy 3
@@ -98,7 +98,7 @@ ID Patient ID_Speciality Speciality Priority
 97 “Patient-097” 8 Plastic 3
 98 “Patient-098” 9 Neurology 3
 99 “Patient-099” 2 Ginecology 2
-100 “Patient-100” 1 "General Surgery" 2
+100 “Patient-100” 1 “General Surgery” 2
 101 “Patient-101” 3 Ophthalmology 3
 102 “Patient-102” 4 Vascular 2
 103 “Patient-103” 5 Orthopedy 3
@@ -107,7 +107,7 @@ ID Patient ID_Speciality Speciality Priority
 106 “Patient-106” 8 Plastic 2
 107 “Patient-107” 9 Neurology 2
 108 “Patient-108” 2 Ginecology 3
-109 “Patient-109” 1 "General Surgery" 2
+109 “Patient-109” 1 “General Surgery” 2
 110 “Patient-110” 3 Ophthalmology 3
 111 “Patient-111” 4 Vascular 3
 112 “Patient-112” 5 Orthopedy 1
@@ -116,7 +116,7 @@ ID Patient ID_Speciality Speciality Priority
 115 “Patient-115” 8 Plastic 2
 116 “Patient-116” 9 Neurology 2
 117 “Patient-117” 2 Ginecology 3
-118 “Patient-118” 1 "General Surgery" 2
+118 “Patient-118” 1 “General Surgery” 2
 119 “Patient-119” 3 Ophthalmology 2
 120 “Patient-120” 4 Vascular 2
 121 “Patient-121” 5 Orthopedy 2
@@ -125,7 +125,7 @@ ID Patient ID_Speciality Speciality Priority
 124 “Patient-124” 8 Plastic 3
 125 “Patient-125” 9 Neurology 1
 126 “Patient-126” 2 Ginecology 2
-127 “Patient-127” 1 "General Surgery" 3
+127 “Patient-127” 1 “General Surgery” 3
 128 “Patient-128” 3 Ophthalmology 3
 129 “Patient-129” 4 Vascular 3
 130 “Patient-130” 5 Orthopedy 3
@@ -134,7 +134,7 @@ ID Patient ID_Speciality Speciality Priority
 133 “Patient-133” 8 Plastic 3
 134 “Patient-134” 9 Neurology 3
 135 “Patient-135” 2 Ginecology 2
-136 “Patient-136” 1 "General Surgery" 2
+136 “Patient-136” 1 “General Surgery” 2
 137 “Patient-137” 3 Ophthalmology 3
 138 “Patient-138” 4 Vascular 3
 139 “Patient-139” 5 Orthopedy 3
@@ -143,7 +143,7 @@ ID Patient ID_Speciality Speciality Priority
 142 “Patient-142” 8 Plastic 2
 143 “Patient-143” 9 Neurology 3
 144 “Patient-144” 2 Ginecology 2
-145 “Patient-145” 1 "General Surgery" 2
+145 “Patient-145” 1 “General Surgery” 2
 146 “Patient-146” 3 Ophthalmology 2
 147 “Patient-147” 4 Vascular 3
 148 “Patient-148” 5 Orthopedy 3
@@ -152,7 +152,7 @@ ID Patient ID_Speciality Speciality Priority
 151 “Patient-151” 8 Plastic 2
 152 “Patient-152” 9 Neurology 2
 153 “Patient-153” 2 Ginecology 1
-154 “Patient-154” 1 "General Surgery" 3
+154 “Patient-154” 1 “General Surgery” 3
 155 “Patient-155” 3 Ophthalmology 3
 156 “Patient-156” 4 Vascular 3
 157 “Patient-157” 5 Orthopedy 3

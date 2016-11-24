@@ -64,16 +64,33 @@ do print "Rooms: ", card(Rooms);
 do print "Days: ", card(Days);
 do print "Time units/day: ", MAX_TIME_UNIT;
 do print "Period indexes: ", card(PeriodIndexes);
-do print "Doctors' max availiable attendance time: ", sum <d,t> in proj(RAWDoctors, <1,4>) : t;
+do print "";
 
+do print "Doctors:";
+set DoctorAtendance[<obs_spec,n> in proj(RAWSpecialities, <1,2>)] := { <doc,spec,t_maxw> in proj(RAWDoctors, <1,2,4>) with obs_spec == spec };
+do forall <obs_spec,n> in proj(RAWSpecialities, <1,2>) do print "  ", n, " available periods: ", sum <doc,spec,t_maxw> in 
+	DoctorAtendance[obs_spec,n] : t_maxw;
+do print "------------------------------";
+do print "Doctors' max availiable attendance time: ", sum <d,t> in proj(RAWDoctors, <1,4>) : t;
+do print "------------------------------";
+
+do print "";
+do print "Surgeries:";
+set SurgeriesAtendance[<obs_s,n,timeNeeded> in proj(RAWSpecialities, <1,2,3>)] := { <surg,s> in proj(RAWSurgeries, <1,2>) with obs_s == s };
+do forall <obs_s,n,timeNeeded> in proj(RAWSpecialities, <1,2,3>) do print "  ", n, " demanded periods: ", sum <surg,s> in 
+	SurgeriesAtendance[obs_s,n,timeNeeded] : timeNeeded;
+
+do print "------------------------------";
 set DemandedTime := proj({<spec,tUnits,s_rate,surg,spec_s,prior> in proj(RAWSpecialities, <1,3,4>)*RAWSurgeries with spec == spec_s}, <1,2,3,4,6>);
 do print "Total demanded time: ", sum <t,s> in proj(DemandedTime, <2,4>) : t;
 do print "Total demanded time: ", sum <t,s> in 
 	proj({<spec,tUnits,s_rate,surg,prior> in DemandedTime with s_rate < 0.5 or prior < 3}, <2,4>) : t, " (applying suspencion rate criteria)";
+do print "------------------------------";
 
 do print "";
 do print "Variables: ", card(Allocations);
 do print "";
+
 
 var x[Allocations] binary;
 
@@ -126,19 +143,15 @@ do print "const_5:";
 do print "A room in a given a day and time period can be only allocated once.";
 do print "";
 
-set RoomsDaysTimeIndexes := Rooms*Days*TimeIndexes;
-set ShadowedVarsRD[<obs_room,obs_day,obs_size,obs_periodUnit> in RoomsDaysTimeIndexes] := { <surgery,speciality,doctor,room,day,size,periodUnit>
-	in Allocations with obs_room == room and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 };
-
-subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in RoomsDaysTimeIndexes do
-	sum <surgery,speciality,doctor,room,day,size,periodUnit> in ShadowedVarsRD[obs_room,obs_day,obs_size,obs_periodUnit] :
-		x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
+subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in Rooms*Days*TimeIndexes do
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in in Allocations 
+		with obs_room == room and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
+			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 
 do print "const_6:";
 do print "A room can be only scheduled MAX_TIME_UNIT per day.";
 do print "";
-
 
 subto const_6: forall <obs_room,obs_day> in Rooms*Days do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
@@ -150,29 +163,20 @@ do print "const_7:";
 do print "A doctor in a given day and time period can be only allocated once.";
 do print "";
 
-set DoctorsDayTimeIndexes := Doctors*Days*TimeIndexes;
-set ShadowedVarsDD[<obs_doctor,obs_day,obs_size,obs_periodUnit> in DoctorsDayTimeIndexes] := {
-	<surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
-	with obs_doctor == doctor and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 };
-
-subto const_7: forall <obs_doctor,obs_day,obs_size,obs_period> in DoctorsDayTimeIndexes do 
-	sum <surgery,speciality,doctor,room,day,size,periodUnit> in ShadowedVarsDD[obs_doctor,obs_day,obs_size,obs_period] :
-		x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
+subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in Doctors*Days*TimeIndexes do 
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
+		with obs_doctor == doctor and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
+			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 
 do print "const_8:";
 do print "Doctor's max daily time.";
 do print "";
 
-set C8 := proj({<doctor,tmax_day,obs_doctor,day> 
-	in proj(RAWDoctors, <1,3>)*proj(Allocations, <3,5>) with doctor == obs_doctor}, <1,2,4>);
-
-set DoctorsDaysVars[<obs_doctor,tmax_day,obs_day> in C8] := { <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
-	with obs_doctor == doctor and obs_day == day }; 
-
-subto const_8: forall <obs_doctor,tmax_day,obs_day> in C8 do
-	sum <surgery,speciality,doctor,room,day,size,periodUnit> in DoctorsDaysVars[obs_doctor,tmax_day,obs_day] :
-		x[surgery,speciality,doctor,room,day,size,periodUnit]*size <= tmax_day;
+subto const_8: forall <obs_doctor,tmax_day,obs_day> in proj(RAWDoctors, <1,3>)*Days do
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
+		with obs_doctor == doctor and obs_day == day :
+			x[surgery,speciality,doctor,room,day,size,periodUnit]*size <= tmax_day;
 
 
 do print "const_9:";

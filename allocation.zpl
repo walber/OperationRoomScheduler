@@ -144,7 +144,7 @@ do print "A room in a given a day and time period can be only allocated once.";
 do print "";
 
 subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in Rooms*Days*TimeIndexes do
-	sum <surgery,speciality,doctor,room,day,size,periodUnit> in in Allocations 
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations 
 		with obs_room == room and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 

@@ -41,91 +41,87 @@ ID Patient ID_Speciality Speciality Priority
 40 Patient-040 1 "General Surgery" 3
 41 Patient-041 3 Ophthalmology 2
 42 Patient-042 5 Orthopedy 2
-43 Patient-043 6 Urgency 1
-44 Patient-044 7 Urology 3
-45 Patient-045 8 Plastic 3
-46 Patient-046 9 Neurology 2
-47 Patient-047 2 Ginecology 3
-48 Patient-048 1 "General Surgery" 3
-49 Patient-049 3 Ophthalmology 3
-50 Patient-050 4 Vascular 3
-51 Patient-051 7 Urology 2
-52 Patient-052 8 Plastic 2
-53 Patient-053 9 Neurology 2
-54 Patient-054 2 Ginecology 3
-55 Patient-055 1 "General Surgery" 3
-56 Patient-056 3 Ophthalmology 3
-57 Patient-057 7 Urology 1
-58 Patient-058 8 Plastic 1
-59 Patient-059 9 Neurology 2
-60 Patient-060 2 Ginecology 2
-61 Patient-061 1 "General Surgery" 3
-62 Patient-062 3 Ophthalmology 3
-63 Patient-063 5 Orthopedy 2
-64 Patient-064 6 Urgency 1
-65 Patient-065 7 Urology 2
-66 Patient-066 8 Plastic 3
-67 Patient-067 2 Ginecology 2
-68 Patient-068 1 "General Surgery" 3
-69 Patient-069 3 Ophthalmology 3
-70 Patient-070 5 Orthopedy 3
-71 Patient-071 7 Urology 3
-72 Patient-072 8 Plastic 2
-73 Patient-073 9 Neurology 3
-74 Patient-074 2 Ginecology 3
-75 Patient-075 1 "General Surgery" 1
-76 Patient-076 3 Ophthalmology 3
-77 Patient-077 5 Orthopedy 3
-78 Patient-078 7 Urology 3
-79 Patient-079 8 Plastic 3
-80 Patient-080 2 Ginecology 2
-81 Patient-081 1 "General Surgery" 2
-82 Patient-082 3 Ophthalmology 3
-83 Patient-083 4 Vascular 2
-84 Patient-084 5 Orthopedy 3
-85 Patient-085 7 Urology 2
-86 Patient-086 8 Plastic 2
-87 Patient-087 9 Neurology 2
-88 Patient-088 2 Ginecology 3
-89 Patient-089 1 "General Surgery" 2
-90 Patient-090 3 Ophthalmology 3
-91 Patient-091 4 Vascular 3
-92 Patient-092 5 Orthopedy 1
-93 Patient-093 7 Urology 3
-94 Patient-094 8 Plastic 2
-95 Patient-095 9 Neurology 2
-96 Patient-096 2 Ginecology 3
-97 Patient-097 1 "General Surgery" 2
-98 Patient-098 3 Ophthalmology 2
-99 Patient-099 4 Vascular 2
-100 Patient-100 5 Orthopedy 2
-101 Patient-101 7 Urology 2
-102 Patient-102 8 Plastic 3
-103 Patient-103 9 Neurology 1
-104 Patient-104 2 Ginecology 2
-105 Patient-105 1 "General Surgery" 3
-106 Patient-106 3 Ophthalmology 3
-107 Patient-107 4 Vascular 3
-108 Patient-108 5 Orthopedy 3
-109 Patient-109 7 Urology 1
-110 Patient-110 8 Plastic 3
-111 Patient-111 9 Neurology 3
-112 Patient-112 2 Ginecology 2
-113 Patient-113 1 "General Surgery" 2
-114 Patient-114 3 Ophthalmology 3
-115 Patient-115 5 Orthopedy 3
-116 Patient-116 6 Urgency 1
-117 Patient-117 7 Urology 2
-118 Patient-118 8 Plastic 2
-119 Patient-119 9 Neurology 3
-120 Patient-120 2 Ginecology 2
-121 Patient-121 1 "General Surgery" 2
-122 Patient-122 3 Ophthalmology 2
-123 Patient-123 6 Urgency 1
-124 Patient-124 7 Urology 3
-125 Patient-125 8 Plastic 2
-126 Patient-126 9 Neurology 2
-127 Patient-127 2 Ginecology 1
-128 Patient-128 1 "General Surgery" 3
-129 Patient-129 3 Ophthalmology 3
-130 Patient-130 7 Urology 3
+43 Patient-043 7 Urology 3
+44 Patient-044 8 Plastic 3
+45 Patient-045 9 Neurology 2
+46 Patient-046 2 Ginecology 3
+47 Patient-047 1 "General Surgery" 3
+48 Patient-048 3 Ophthalmology 3
+49 Patient-049 4 Vascular 3
+50 Patient-050 7 Urology 2
+51 Patient-051 8 Plastic 2
+52 Patient-052 9 Neurology 2
+53 Patient-053 2 Ginecology 3
+54 Patient-054 1 "General Surgery" 3
+55 Patient-055 3 Ophthalmology 3
+56 Patient-056 7 Urology 1
+57 Patient-057 8 Plastic 1
+58 Patient-058 9 Neurology 2
+59 Patient-059 2 Ginecology 2
+60 Patient-060 1 "General Surgery" 3
+61 Patient-061 3 Ophthalmology 3
+62 Patient-062 5 Orthopedy 2
+63 Patient-063 7 Urology 2
+64 Patient-064 8 Plastic 3
+65 Patient-065 2 Ginecology 2
+66 Patient-066 1 "General Surgery" 3
+67 Patient-067 3 Ophthalmology 3
+68 Patient-068 5 Orthopedy 3
+69 Patient-069 7 Urology 3
+70 Patient-070 8 Plastic 2
+71 Patient-071 9 Neurology 3
+72 Patient-072 2 Ginecology 3
+73 Patient-073 1 "General Surgery" 1
+74 Patient-074 3 Ophthalmology 3
+75 Patient-075 5 Orthopedy 3
+76 Patient-076 7 Urology 3
+77 Patient-077 8 Plastic 3
+78 Patient-078 2 Ginecology 2
+79 Patient-079 1 "General Surgery" 2
+80 Patient-080 3 Ophthalmology 3
+81 Patient-081 4 Vascular 2
+82 Patient-082 5 Orthopedy 3
+83 Patient-083 7 Urology 2
+84 Patient-084 8 Plastic 2
+85 Patient-085 9 Neurology 2
+86 Patient-086 2 Ginecology 3
+87 Patient-087 1 "General Surgery" 2
+88 Patient-088 3 Ophthalmology 3
+89 Patient-089 4 Vascular 3
+90 Patient-090 5 Orthopedy 1
+91 Patient-091 7 Urology 3
+92 Patient-092 8 Plastic 2
+93 Patient-093 9 Neurology 2
+94 Patient-094 2 Ginecology 3
+95 Patient-095 1 "General Surgery" 2
+96 Patient-096 3 Ophthalmology 2
+97 Patient-097 4 Vascular 2
+98 Patient-098 5 Orthopedy 2
+99 Patient-099 7 Urology 2
+100 Patient-100 8 Plastic 3
+101 Patient-101 9 Neurology 1
+102 Patient-102 2 Ginecology 2
+103 Patient-103 1 "General Surgery" 3
+104 Patient-104 3 Ophthalmology 3
+105 Patient-105 4 Vascular 3
+106 Patient-106 5 Orthopedy 3
+107 Patient-107 7 Urology 1
+108 Patient-108 8 Plastic 3
+109 Patient-109 9 Neurology 3
+110 Patient-110 2 Ginecology 2
+111 Patient-111 1 "General Surgery" 2
+112 Patient-112 3 Ophthalmology 3
+113 Patient-113 5 Orthopedy 3
+114 Patient-114 7 Urology 2
+115 Patient-115 8 Plastic 2
+116 Patient-116 9 Neurology 3
+117 Patient-117 2 Ginecology 2
+118 Patient-118 1 "General Surgery" 2
+119 Patient-119 3 Ophthalmology 2
+120 Patient-120 7 Urology 3
+121 Patient-121 8 Plastic 2
+122 Patient-122 9 Neurology 2
+123 Patient-123 2 Ginecology 1
+124 Patient-124 1 "General Surgery" 3
+125 Patient-125 3 Ophthalmology 3
+126 Patient-126 7 Urology 3

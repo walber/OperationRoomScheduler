@@ -106,7 +106,7 @@ do print "";
 subto const_1: forall <critical_surgery> in CriticalSurgeries do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with critical_surgery == surgery :
-			x[surgery,speciality,doctor,room,day,size,periodUnit] == 1;
+			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 
 do print "const_2:";

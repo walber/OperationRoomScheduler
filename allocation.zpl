@@ -143,7 +143,7 @@ do print "const_5:";
 do print "A room in a given a day and time period can be only allocated once.";
 do print "";
 
-subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in Rooms*Days*TimeIndexes do
+subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <4,5,6,7>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations 
 		with obs_room == room and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
@@ -163,7 +163,7 @@ do print "const_7:";
 do print "A doctor in a given day and time period can be only allocated once.";
 do print "";
 
-subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in Doctors*Days*TimeIndexes do 
+subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,5,6,7>) do 
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_doctor == doctor and obs_day == day and ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;

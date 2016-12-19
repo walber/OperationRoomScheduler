@@ -158,7 +158,7 @@ do print "const_7:";
 do print "A doctor in a given day and time period can be only allocated once.";
 do print "";
 
-subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,4,5,6,7>) do
+subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,5,6,7>) do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_doctor == doctor and obs_day == day and shadowedPeriods(obs_size,obs_periodUnit,size,periodUnit) :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
@@ -168,7 +168,8 @@ do print "const_8:";
 do print "Doctor's max daily time.";
 do print "";
 
-subto const_8: forall <obs_doctor,tmax_day,obs_day> in proj(RAWDoctors, <1,3>)*Days do
+subto const_8: forall <obs_doctor,tmax_day,obs_doctorD,obs_day> in proj(RAWDoctors, <1,3>)*proj(Allocations, <3,5>) 
+	with obs_doctor == obs_doctorD do
 	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
 		with obs_doctor == doctor and obs_day == day :
 			x[surgery,speciality,doctor,room,day,size,periodUnit]*size <= tmax_day;

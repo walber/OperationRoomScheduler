@@ -23,11 +23,7 @@ set TimeIndexes := proj(PeriodIndexes, <2,3>);
 
 set SizedPeriods[<size,timeUnit> in TimeIndexes] := { timeUnit to (timeUnit + (size - 1)) by 1 };
 
-param ShadowedPeriods[ <size_1,periodUnit_1,size_2,periodUnit_2> in TimeIndexes*TimeIndexes ] := 
-	if ( card(SizedPeriods[size_1,periodUnit_1] inter SizedPeriods[size_2,periodUnit_2] ) > 0)
-		then 1
-	else 0
-	end;
+defbool shadowedPeriods(size_1,periodUnit_1,size_2,periodUnit_2) := card(SizedPeriods[size_1,periodUnit_1] inter SizedPeriods[size_2,periodUnit_2] ) > 0;
 
 set CriticalSurgeries := proj({ <id_surgery,id_speciality,prior> in RAWSurgeries with prior == 1 }, <1>);
 set MajorSurgeries := proj({ <id_surgery,id_speciality,prior> in RAWSurgeries with prior == 2 }, <1>);
@@ -91,7 +87,6 @@ do print "";
 do print "Variables: ", card(Allocations);
 do print "";
 
-
 var x[Allocations] binary;
 
 do print "obj function";
@@ -143,16 +138,9 @@ do print "const_5:";
 do print "A room in a given a day and time period can be only allocated once.";
 do print "";
 
-set RoomsDays := proj(Allocations, <4,5>);
-set C5[<obs_room,obs_day> in RoomsDays] := { <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
-	with obs_room == room and obs_day == day };
-
-subto const_5: forall <obs_room,obs_day> in RoomsDays do
-	forall <obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit> in C5[obs_room,obs_day] do
-		forall <surgery,speciality,doctor,room,day,size,periodUnit> in C5[obs_room,obs_day] -
-		{<obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit>}
-			with ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
-			x[obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit] +
+subto const_5: forall <obs_room,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <4,5,6,7>) do
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
+		with obs_room == room and obs_day == day and shadowedPeriods(obs_size,obs_periodUnit,size,periodUnit) :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 
@@ -170,16 +158,9 @@ do print "const_7:";
 do print "A doctor in a given day and time period can be only allocated once.";
 do print "";
 
-set DoctorsDays := proj(Allocations, <3,5>);
-set C7[<obs_doctor,obs_day> in DoctorsDays] := { <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
-	with obs_doctor == doctor and obs_day == day };
-
-subto const_7: forall <obs_doctor,obs_day> in DoctorsDays do
-	forall <obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit> in C7[doctor,day] do
-		forall <surgery,speciality,doctor,room,day,size,periodUnit> in C7[doctor,day] - 
-		{<obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit>}
-			with ShadowedPeriods[obs_size,obs_periodUnit,size,periodUnit] == 1 :
-			x[obs_surgery,obs_speciality,obs_doctor,obs_room,obs_day,obs_size,obs_periodUnit] +
+subto const_7: forall <obs_doctor,obs_day,obs_size,obs_periodUnit> in proj(Allocations, <3,4,5,6,7>) do
+	sum <surgery,speciality,doctor,room,day,size,periodUnit> in Allocations
+		with obs_doctor == doctor and obs_day == day and shadowedPeriods(obs_size,obs_periodUnit,size,periodUnit) :
 			x[surgery,speciality,doctor,room,day,size,periodUnit] <= 1;
 
 
